@@ -1,0 +1,47 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    container_name: mvc-app
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html  
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: mvc
+      MYSQL_PASSWORD: xx
+      MYSQL_DATABASE: MvcAuth_db
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: mvc-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 77
+      MYSQL_DATABASE: MvcAuth_db
+      MYSQL_USER: mvc
+      MYSQL_PASSWORD: xx
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: mvc-pma
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root       
+      PMA_PASSWORD: 77
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:

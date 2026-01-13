@@ -1,0 +1,16 @@
+{
+    "name": "mvc-auth",
+    "description": "MVC basic authentification",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Soufyan",
+            "email": "elomranisoufyan@gmail.com"
+        }
+    ],
+    "require": {}
+}
