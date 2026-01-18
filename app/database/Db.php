@@ -9,8 +9,8 @@ class Db {
 
     private $host = 'db';
     private $user = 'root';
-    private $pass = '77';
-    private $dbname = 'mvc';
+    private $pass = 'xx';
+    private $dbname = 'MvcAuth_db';
 
     private function __construct() {
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
