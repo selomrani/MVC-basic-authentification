@@ -10,7 +10,7 @@ class Db {
     private $host = 'db';
     private $user = 'root';
     private $pass = '77';
-    private $dbname = 'SwiftDropDB';
+    private $dbname = 'mvc';
 
     private function __construct() {
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
